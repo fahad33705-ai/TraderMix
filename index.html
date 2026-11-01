@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070707">
+<meta name="description" content="TRADER MIX — Learn, Grow, Succeed. Welcome to the official luxury trading community by Shaheen.">
+<title>TRADER MIX — Official Community & Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: #070707;
+  color: #F8FAFC;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Luxury penthouse background */
+body:before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(180deg, rgba(7, 7, 7, 0.88) 0%, rgba(10, 9, 7, 0.6) 45%, #070707 100%),
+              url('Gemini_Generated_Image_4gmyfh4gmyfh4gmy_e3c72258.jpg') center center / cover no-repeat;
+  filter: brightness(0.65) contrast(1.1);
+}
+a { color: inherit; text-decoration: none; }
+.shell { width: min(1280px, calc(100% - 32px)); margin: auto; }
+/* Metallic Silver & Brush Gold Text */
+.text-silver {
+  background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 45%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.8));
+}
+.text-gold {
+  background: linear-gradient(135deg, #FFF9C4 0%, #FFD54F 30%, #FFA000 70%, #FF6F00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 14px rgba(255,179,0,0.6));
+}
+/* Glowing beam */
+.gold-beam {
+  position: absolute;
+  height: 2px;
+  left: 0;
+  right: 0;
+  top: 48%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 215, 64, 0.2) 20%, rgba(255, 235, 100, 0.85) 50%, rgba(255, 215, 64, 0.2) 80%, transparent 100%);
+  box-shadow: 0 0 20px rgba(255, 204, 77, 0.8);
+  pointer-events-none;
+  z-index: 10;
+}
+/* Topbar */
+.topbar {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 10px;
+}
+.brand-lockup { display: flex; flex-direction: column; position: relative; }
+.crown-icon { width: 22px; height: 18px; fill: #FFC72C; filter: drop-shadow(0 0 6px rgba(255,199,44,0.8)); margin-bottom: -4px; }
+.brand-title { font-size: 24px; font-weight: 800; font-style: italic; display: flex; align-items: center; line-height: 1; }
+.brand-sub { font-size: 8px; font-weight: 700; letter-spacing: .22em; color: #E2E8F0; text-transform: uppercase; margin-top: 2px; }
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  background: rgba(24, 21, 16, 0.95);
+  border: 1px solid rgba(255, 193, 7, 0.35);
+  border-radius: 40px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+.nav-pill a {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #E2E8F0;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: .2s;
+}
+.nav-pill a.active { background: #2a2215; color: #FFDE59; font-weight: 800; }
+.nav-pill a:hover:not(.active) { color: #FFDE59; }
+.btn-yellow-sm {
+  background: linear-gradient(135deg, #FFDE59 0%, #FFB703 60%, #FB8500 100%);
+  color: #0d0a06;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 16px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.auth-actions { display: flex; align-items: center; gap: 10px; }
+.lang-select { padding: 5px 10px; background: #181510; border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 6px; font-size: 11px; font-weight: bold; color: #fff; }
+.btn-signup { padding: 6px 14px; border-radius: 6px; background: #1a1610; border: 1px solid #ffc107; color: #FFDE59; font-size: 12px; font-weight: 700; }
+/* Hero */
+.hero { text-align: center; padding: 25px 0 35px; position: relative; z-index: 20; }
+.welcome-txt { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+.hero-crown { width: 50px; height: 40px; fill: #FFC72C; filter: drop-shadow(0 0 12px rgba(255,199,44,0.9)); margin-bottom: 4px; }
+.hero-brand { font-size: clamp(48px, 8vw, 84px); font-weight: 900; font-style: italic; line-height: 1; margin-bottom: 8px; }
+.hero-sub { font-size: 14px; font-weight: 700; letter-spacing: .25em; color: #F8FAFC; text-transform: uppercase; margin-bottom: 12px; }
+.hero-desc { font-size: 16px; font-style: italic; color: #F1F5F9; margin-bottom: 24px; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+.telegram-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 28px;
+  background: rgba(20, 18, 14, 0.95);
+  border: 2px solid #FFC72C;
+  border-radius: 40px;
+  box-shadow: 0 0 25px rgba(255, 199, 44, 0.5);
+  transition: .25s;
+}
+.telegram-pill:hover { transform: scale(1.04); box-shadow: 0 0 35px rgba(255, 199, 44, 0.8); }
+.tg-icon { width: 28px; height: 28px; border-radius: 50%; background: #FFC72C; display: grid; place-items: center; }
+.tg-icon svg { width: 16px; height: 16px; fill: #14120e; }
+.tg-text { font-size: 16px; font-weight: 800; color: #38BDF8; }
+/* 3 Cards Grid (Trading Investing removed per request) */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 20;
+}
+.sample-card {
+  background: linear-gradient(165deg, rgba(22, 19, 15, 0.94) 0%, rgba(10, 9, 8, 0.96) 100%);
+  border: 1px solid rgba(255, 204, 77, 0.35);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: .25s ease;
+}
+.sample-card:hover { transform: translateY(-4px); border-color: rgba(255, 215, 64, 0.7); box-shadow: 0 0 25px rgba(255, 193, 7, 0.25); }
+.card-header { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
+.card-avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #FFC72C;
+  flex-shrink: 0;
+  box-shadow: 0 0 14px rgba(255,199,44,0.4);
+}
+.card-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.card-title h3 { font-size: 21px; font-weight: 800; line-height: 1.1; margin-bottom: 6px; }
+.pill-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.pill-badge.gold { border: 1px solid #FFC72C; color: #FFDE59; background: rgba(38, 31, 18, 0.6); }
+.pill-badge.green { border: 1px solid #22c55e; color: #86efac; background: rgba(21, 128, 61, 0.4); }
+.card-info { font-size: 12px; color: #E2E8F0; margin-bottom: 18px; line-height: 1.4; display: flex; align-items: center; gap: 8px; }
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 193, 7, 0.2);
+}
+.tag-price {
+  padding: 4px 12px;
+  background: #2a2215;
+  border: 1px solid #FFC72C;
+  border-radius: 20px;
+  color: #FFDE59;
+  font-weight: 800;
+  font-size: 13px;
+  font-family: monospace;
+}
+.tag-free {
+  padding: 4px 12px;
+  background: #0d2815;
+  border: 1px solid #22c55e;
+  border-radius: 20px;
+  color: #86efac;
+  font-weight: 800;
+  font-size: 12px;
+}
+.btn-enroll {
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #FFDE59 0%, #FFB703 60%, #FB8500 100%);
+  color: #0d0a06;
+  font-size: 12px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-green {
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 60%, #15803d 100%);
+  color: #061f0e;
+  font-size: 12px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+/* Card 4 Socials */
+.social-icons-row { display: flex; justify-content: space-between; margin: 18px 0; }
+.soc-btn { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; transition: .2s; }
+.soc-btn:hover { transform: scale(1.1); }
+.soc-btn.tg { background: #0088cc; }
+.soc-btn.fb { background: #1877F2; }
+.soc-btn.tt { background: #010101; border: 1px solid #ff0050; }
+.soc-btn.yt { background: #FF0000; }
+.soc-btn svg { width: 18px; height: 18px; fill: #fff; }
+/* Bottom Bar */
+.bottom-bar {
+  background: rgba(15, 13, 10, 0.95);
+  border: 1px solid rgba(255, 193, 7, 0.25);
+  border-radius: 16px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  position: relative;
+  z-index: 20;
+}
+.center-info { flex: 1; border-left: 1px solid rgba(255, 193, 7, 0.2); border-right: 1px solid rgba(255, 193, 7, 0.2); padding: 0 20px; text-align: left; }
+.center-info p { font-size: 12px; color: #E2E8F0; line-height: 1.5; margin-bottom: 4px; }
+.warn-txt { font-size: 11px; color: #FBBF24; font-weight: 700; }
+.script-motto { font-family: serif; font-style: italic; font-size: 16px; color: #FFD54F; font-weight: bold; }
+@media(max-width: 1024px) {
+  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .gold-beam { display: none; }
+  .bottom-bar { flex-direction: column; text-align: center; }
+  .center-info { border: none; padding: 12px 0; text-align: center; }
+}
+@media(max-width: 640px) {
+  .cards-grid { grid-template-columns: 1fr; }
+  .nav-pill { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="gold-beam"></div>
+
+<div class="shell">
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="brand-lockup">
+      <svg class="crown-icon" viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
+      <div class="brand-title"><span class="text-silver">TRADER</span><span class="text-gold">MIX</span></div>
+      <div class="brand-sub">TRADE ✦ LEARN ✦ GROW</div>
+    </div>
+
+    <!-- Center Nav Pill -->
+    <div class="nav-pill">
+      <a href="#home" class="active"><span>⌂</span> Home</a>
+      <a href="https://t.me/TraderMix00" target="_blank"><span>📚</span> Courses & Services ⌵</a>
+      <a href="https://t.me/TraderMix00" target="_blank"><span>🎧</span> Contact Us</a>
+      <a href="https://t.me/TraderMix00" target="_blank" class="btn-yellow-sm"><span>👥</span> Join Our Community</a>
+    </div>
+
+    <!-- Right Controls -->
+    <div class="auth-actions">
+      <div class="lang-select">🌐 EN ⌵</div>
+      <a href="https://t.me/TraderMix00" target="_blank" style="font-size:12px;font-weight:600;color:#E2E8F0">Log In</a>
+      <a href="https://t.me/TraderMix00" target="_blank" class="btn-signup">Sign Up</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="welcome-txt">Welcome to</div>
+    <div style="display:flex;justify-content:center"><svg class="hero-crown" viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg></div>
+    <div class="hero-brand"><span class="text-silver">TRADER</span><span class="text-gold">MIX</span></div>
+    <div class="hero-sub">TRADE ✦ LEARN ✦ GROW</div>
+    <p class="hero-desc">Join our community and take your trading skills to the next level</p>
+
+    <!-- Telegram Channel Pill -->
+    <div>
+      <a href="https://t.me/TraderMix00" target="_blank" class="telegram-pill">
+        <div class="tg-icon">
+          <svg viewBox="0 0 24 24"><path d="M21.7 3.3 18.5 20c-.2 1.2-.9 1.5-1.8 1l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.7 1.1 12.2c-1.1-.3-1.1-1.1.2-1.6L20.4 3.2c.9-.3 1.7.2 1.3 1.1Z"/></svg>
+        </div>
+        <span class="tg-text">Telegram Public Channel</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 3 Sample Cards Grid (Trading Investing removed per request) -->
+  <section class="cards-grid">
+    
+    <!-- Card 1: Forex Trading ($150) -->
+    <div class="sample-card">
+      <div>
+        <div class="card-header">
+          <div class="card-avatar">
+            <img src="IMG_5608.JPG.jpeg" alt="Shaheen Forex Trading">
+          </div>
+          <div class="card-title">
+            <h3><span style="color:#FFC107">Forex</span><br><span style="color:#fff">Trading</span></h3>
+            <span class="pill-badge gold">Premium Course</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <span>🎓</span>
+          <span>Beginner to Advanced Trading Masterclass</span>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <span class="tag-price">$150</span>
+        <a href="https://t.me/TraderMix00" target="_blank" class="btn-enroll">
+          Enroll Now ➔
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 2: Premium Live Trade -->
+    <div class="sample-card" style="border-color:rgba(34,197,94,0.5)">
+      <div>
+        <div class="card-header">
+          <div class="card-avatar" style="border-color:#22c55e;box-shadow:0 0 18px rgba(34,197,94,0.6)">
+            <img src="240cb356-2b6b-47c1-9a4c-f27544b31915.png" alt="TraderMix Binary Live Trade by Shaheen">
+          </div>
+          <div class="card-title">
+            <h3><span style="color:#22c55e">Premium</span><br><span style="color:#fff">Live Trade</span></h3>
+            <span class="pill-badge green">● Everyday</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <span>📈</span>
+          <span>Premium Live Trade Support with Expert Guidance</span>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <span class="tag-free">Free</span>
+        <a href="https://t.me/TraderMix00" target="_blank" class="btn-green">
+          Join Telegram ➔
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 4: Join Our Community -->
+    <div class="sample-card">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <h3 style="font-size:20px;font-weight:800;line-height:1.1">
+              <span style="color:#fff">Join Our</span><br><span style="color:#FFC107">Community</span>
+            </h3>
+            <div style="font-size:11px;color:#CBD5E1;margin-top:4px">Be a Part of Trader Mix Family</div>
+          </div>
+          <!-- 3D Rising Bar Chart SVG -->
+          <div style="width:54px;height:45px">
+            <svg viewBox="0 0 60 50" fill="none">
+              <rect x="5" y="35" width="8" height="15" rx="1.5" fill="#FFC107" />
+              <rect x="18" y="25" width="8" height="25" rx="1.5" fill="#FFC107" />
+              <rect x="31" y="15" width="8" height="35" rx="1.5" fill="#FFC107" />
+              <rect x="44" y="5" width="8" height="45" rx="1.5" fill="#FFC107" />
+              <path d="M4 42 Q 25 25, 48 8" stroke="#FFE082" stroke-width="3" stroke-linecap="round" />
+              <polygon points="54,6 44,4 47,14" fill="#FFE082" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- 4 Social Platform Buttons -->
+        <div class="social-icons-row">
+          <a href="https://t.me/TraderMix00" target="_blank" class="soc-btn tg" title="Telegram">
+            <svg viewBox="0 0 24 24"><path d="M21.7 3.3 18.5 20c-.2 1.2-.9 1.5-1.8 1l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.7 1.1 12.2c-1.1-.3-1.1-1.1.2-1.6L20.4 3.2c.9-.3 1.7.2 1.3 1.1Z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1QEBVduZXq/?mibextid=wwXIfr" target="_blank" class="soc-btn fb" title="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@tradermix01?_r=1&_t=ZS-9AQ060LT6jk" target="_blank" class="soc-btn tt" title="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M19.6 8.2a7.1 7.1 0 0 1-4.2-1.4v7.1a5.8 5.8 0 1 1-5-5.7v3.6a2.3 2.3 0 1 0 1.6 2.2V2.5h3.4c.2 2.1 1.9 3.8 4.2 4v1.7Z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@Tradermixofficial" target="_blank" class="soc-btn yt" title="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card-bottom">
+        <a href="https://t.me/TraderMix00" target="_blank" class="btn-enroll" style="width:100%;justify-content:center">
+          Follow Us ➔
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Bottom Bar matching sample footer strip -->
+  <footer class="bottom-bar">
+    <div class="brand-lockup">
+      <svg class="crown-icon" viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
+      <div class="brand-title"><span class="text-silver">TRADER</span><span class="text-gold">MIX</span></div>
+      <div class="brand-sub">TRADE ✦ LEARN ✦ GROW</div>
+    </div>
+
+    <div class="center-info">
+      <p>We focus on helping every student grow in <strong style="color:#FFC72C">forex</strong> through step-by-step guidance, real market insights, and hands-on learning. Using modern strategies and smart risk management for <strong style="color:#FFC72C">long-term success</strong>.</p>
+      <div class="warn-txt">⚠️ Trading involves financial risk. Always use proper risk management. ⚠️</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+      <div style="display:flex;gap:6px">
+        <a href="https://www.youtube.com/@Tradermixofficial" target="_blank" class="soc-btn yt" style="width:28px;height:28px"><svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a>
+        <a href="https://www.tiktok.com/@tradermix01?_r=1&_t=ZS-9AQ060LT6jk" target="_blank" class="soc-btn tt" style="width:28px;height:28px"><svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M19.6 8.2a7.1 7.1 0 0 1-4.2-1.4v7.1a5.8 5.8 0 1 1-5-5.7v3.6a2.3 2.3 0 1 0 1.6 2.2V2.5h3.4c.2 2.1 1.9 3.8 4.2 4v1.7Z"/></svg></a>
+        <a href="https://www.facebook.com/share/1QEBVduZXq/?mibextid=wwXIfr" target="_blank" class="soc-btn fb" style="width:28px;height:28px"><svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z"/></svg></a>
+      </div>
+      <div class="script-motto">Learn • Grow • Succeed</div>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
