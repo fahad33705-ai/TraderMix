@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070707">
+<meta name="description" content="TRADER MIX — Official Luxury Trading Community & $150 Masterclass by Shaheen.">
+<title>TRADER MIX — Official Luxury Trading Community & Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: #070707;
+  color: #F8FAFC;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+/* Luxury penthouse background */
+body:before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(180deg, rgba(7, 7, 7, 0.88) 0%, rgba(10, 9, 7, 0.6) 45%, #070707 100%),
+              url('Gemini_Generated_Image_4gmyfh4gmyfh4gmy_e3c72258.jpg'),
+              url('https://ais-pre-hqqxd7cu3afajwvimcfyka-436748455932.asia-northeast1.run.app/assets/aistudio/Gemini_Generated_Image_4gmyfh4gmyfh4gmy_e3c72258.jpg') center center / cover no-repeat;
+  filter: brightness(0.65) contrast(1.1);
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+.shell { width: min(1280px, calc(100% - 32px)); margin: auto; }
+
+/* Metallic Silver & Brush Gold Text */
+.text-silver {
+  background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 45%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.8));
+}
+.text-gold {
+  background: linear-gradient(135deg, #FFF9C4 0%, #FFD54F 30%, #FFA000 70%, #FF6F00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 14px rgba(255,179,0,0.6));
+}
+.font-cinzel { font-family: 'Cinzel', serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Glowing beam */
+.gold-beam {
+  position: absolute;
+  height: 2px;
+  left: 0;
+  right: 0;
+  top: 480px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 215, 64, 0.2) 20%, rgba(255, 235, 100, 0.85) 50%, rgba(255, 215, 64, 0.2) 80%, transparent 100%);
+  box-shadow: 0 0 20px rgba(255, 204, 77, 0.8);
+  pointer-events-none;
+  z-index: 10;
+}
+
+/* Glass panel */
+.glass-panel {
+  background: linear-gradient(165deg, rgba(22, 19, 15, 0.94) 0%, rgba(10, 9, 8, 0.96) 100%);
+  border: 1px solid rgba(255, 204, 77, 0.3);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
+}
+
+/* Topbar */
+.topbar {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 10px;
+}
+.brand-lockup { display: flex; flex-direction: column; position: relative; }
+.crown-icon { width: 22px; height: 18px; fill: #FFC72C; filter: drop-shadow(0 0 6px rgba(255,199,44,0.8)); margin-bottom: -4px; }
+.brand-title { font-size: 24px; font-weight: 800; font-style: italic; display: flex; align-items: center; line-height: 1; }
+.brand-sub { font-size: 8px; font-weight: 700; letter-spacing: .22em; color: #E2E8F0; text-transform: uppercase; margin-top: 2px; }
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  background: rgba(24, 21, 16, 0.95);
+  border: 1px solid rgba(255, 193, 7, 0.35);
+  border-radius: 40px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+.nav-pill a {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #E2E8F0;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: .2s;
+}
+.nav-pill a:hover, .nav-pill a.active { background: #2a2215; color: #FFDE59; }
+.btn-yellow-sm {
+  background: linear-gradient(135deg, #FFDE59 0%, #FFB703 60%, #FB8500 100%);
+  color: #0d0a06;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 16px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  border: none;
+}
+.auth-actions { display: flex; align-items: center; gap: 10px; }
+.btn-enroll-action {
+  background: linear-gradient(135deg, #FFDE59 0%, #FFB703 60%, #FB8500 100%);
+  color: #0d0a06;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: .2s;
+}
+.btn-enroll-action:hover { filter: brightness(1.1); transform: scale(1.02); }
+
+/* Hero */
+.hero { text-align: center; padding: 25px 0 35px; position: relative; z-index: 20; }
+.welcome-txt { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+.hero-crown { width: 50px; height: 40px; fill: #FFC72C; filter: drop-shadow(0 0 12px rgba(255,199,44,0.9)); margin-bottom: 4px; }
+.hero-brand { font-size: clamp(48px, 8vw, 84px); font-weight: 900; font-style: italic; line-height: 1; margin-bottom: 8px; }
+.hero-sub { font-size: 14px; font-weight: 700; letter-spacing: .25em; color: #F8FAFC; text-transform: uppercase; margin-bottom: 12px; }
+.hero-desc { font-size: 16px; font-style: italic; color: #F1F5F9; margin-bottom: 24px; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+.telegram-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 28px;
+  background: rgba(20, 18, 14, 0.95);
+  border: 2px solid #FFC72C;
+  border-radius: 40px;
+  box-shadow: 0 0 25px rgba(255, 199, 44, 0.5);
+  transition: .25s;
+}
+.telegram-pill:hover { transform: scale(1.04); box-shadow: 0 0 35px rgba(255, 199, 44, 0.8); }
+.tg-icon { width: 28px; height: 28px; border-radius: 50%; background: #FFC72C; display: grid; place-items: center; }
+.tg-icon svg { width: 16px; height: 16px; fill: #14120e; }
+.tg-text { font-size: 16px; font-weight: 800; color: #38BDF8; }
+
+/* 3 Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 20;
+}
+.sample-card {
+  background: linear-gradient(165deg, rgba(22, 19, 15, 0.94) 0%, rgba(10, 9, 8, 0.96) 100%);
+  border: 1px solid rgba(255, 204, 77, 0.35);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: .25s ease;
+}
+.sample-card:hover { transform: translateY(-4px); border-color: rgba(255, 215, 64, 0.7); box-shadow: 0 0 25px rgba(255, 193, 7, 0.25); }
+.card-header { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
+.card-avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #FFC72C;
+  flex-shrink: 0;
+  box-shadow: 0 0 14px rgba(255,199,44,0.4);
+}
+.card-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.card-title h3 { font-size: 21px; font-weight: 800; line-height: 1.1; margin-bottom: 6px; }
+.pill-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.pill-badge.gold { border: 1px solid #FFC72C; color: #FFDE59; background: rgba(38, 31, 18, 0.6); }
+.pill-badge.green { border: 1px solid #22c55e; color: #86efac; background: rgba(21, 128, 61, 0.4); }
+.card-info { font-size: 12px; color: #E2E8F0; margin-bottom: 18px; line-height: 1.4; display: flex; align-items: center; gap: 8px; }
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 193, 7, 0.2);
+}
+.tag-price {
+  padding: 4px 12px;
+  background: #2a2215;
+  border: 1px solid #FFC72C;
+  border-radius: 20px;
+  color: #FFDE59;
+  font-weight: 800;
+  font-size: 13px;
+  font-family: monospace;
+}
+.tag-free {
+  padding: 4px 12px;
+  background: #0d2815;
+  border: 1px solid #22c55e;
+  border-radius: 20px;
+  color: #86efac;
+  font-weight: 800;
+  font-size: 12px;
+}
+.btn-enroll {
+  padding: 8px 18px;
+  font-size: 12px;
+}
+.btn-green {
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 60%, #15803d 100%);
+  color: #061f0e;
+  font-size: 12px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.social-icons-row { display: flex; justify-content: space-between; margin: 18px 0; }
+.soc-btn { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; transition: .2s; }
+.soc-btn:hover { transform: scale(1.1); }
+.soc-btn.tg { background: #0088cc; }
+.soc-btn.fb { background: #1877F2; }
+.soc-btn.tt { background: #010101; border: 1px solid #ff0050; }
+.soc-btn.yt { background: #FF0000; }
+.soc-btn svg { width: 18px; height: 18px; fill: #fff; }
+
+/* Bottom Bar */
+.bottom-bar {
+  background: rgba(15, 13, 10, 0.95);
+  border: 1px solid rgba(255, 193, 7, 0.25);
+  border-radius: 16px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  position: relative;
+  z-index: 20;
+  margin-bottom: 60px;
+}
+.center-info { flex: 1; border-left: 1px solid rgba(255, 193, 7, 0.2); border-right: 1px solid rgba(255, 193, 7, 0.2); padding: 0 20px; text-align: left; }
+.center-info p { font-size: 12px; color: #E2E8F0; line-height: 1.5; margin-bottom: 4px; }
+.warn-txt { font-size: 11px; color: #FBBF24; font-weight: 700; }
+.script-motto { font-family: serif; font-style: italic; font-size: 16px; color: #FFD54F; font-weight: bold; }
+
+/* Section Layouts */
+.section-wrapper { padding: 80px 0; border-top: 1px solid rgba(214, 177, 122, 0.15); position: relative; z-index: 20; }
+.section-header { text-align: center; max-width: 750px; margin: 0 auto 50px; }
+.badge-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 30px;
+  background: #1e1812;
+  border: 1px solid rgba(240, 210, 155, 0.35);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: #f0d29b;
+  margin-bottom: 12px;
+}
+.section-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: #f7f2ea; margin-bottom: 14px; line-height: 1.2; }
+.section-subtitle { font-size: 14px; color: #b8ada0; line-height: 1.6; }
+
+/* Founder Layout */
+.founder-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 40px; align-items: center; margin-bottom: 60px; }
+.founder-portrait {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid rgba(214, 177, 122, 0.35);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+}
+.founder-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.lifestyle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.lifestyle-card {
+  padding: 16px;
+  border-radius: 18px;
+}
+.lifestyle-img {
+  aspect-ratio: 4/3;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  position: relative;
+}
+.lifestyle-img img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Course Layout */
+.course-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 32px; align-items: stretch; margin-bottom: 40px; }
+.pricing-card {
+  padding: 32px;
+  border-radius: 20px;
+  border: 2px solid rgba(214, 177, 122, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.curriculum-card { padding: 32px; border-radius: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+.module-tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 20px; }
+.mod-tab {
+  padding: 12px 8px;
+  border-radius: 10px;
+  background: #14120e;
+  border: 1px solid rgba(214, 177, 122, 0.15);
+  color: #8e8274;
+  cursor: pointer;
+  text-align: left;
+  transition: .2s;
+}
+.mod-tab.active { background: #261f16; border-color: #f0d29b; color: #fcedc9; }
+.check-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #ddd2c5; margin-bottom: 12px; }
+.check-icon { width: 18px; height: 18px; border-radius: 50%; background: rgba(214, 177, 122, 0.2); border: 1px solid #d6b17a; display: grid; place-items: center; color: #f0d29b; flex-shrink: 0; font-size: 10px; font-weight: bold; }
+
+/* Calculator Widget */
+.calc-container {
+  max-width: 950px;
+  margin: auto;
+  padding: 36px;
+  border-radius: 24px;
+  border: 2px solid rgba(214, 177, 122, 0.35);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+.input-row { margin-bottom: 22px; }
+.input-label { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #d4c8b8; text-transform: uppercase; margin-bottom: 8px; }
+.calc-slider { width: 100%; height: 6px; background: #251e17; border-radius: 6px; appearance: none; cursor: pointer; accent-color: #f0d29b; }
+.btn-size-group { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 10px; }
+.btn-size {
+  padding: 6px;
+  background: #181410;
+  border: 1px solid rgba(214, 177, 122, 0.2);
+  border-radius: 6px;
+  color: #9d9284;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-size.active { background: #f0d29b; color: #14100b; border-color: #f0d29b; }
+.result-card {
+  padding: 28px;
+  background: #15120e;
+  border: 1px solid rgba(214, 177, 122, 0.25);
+  border-radius: 18px;
+  box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* FAQ Accordion */
+.faq-wrap { max-width: 800px; margin: auto; }
+.faq-item {
+  border: 1px solid rgba(214, 177, 122, 0.2);
+  border-radius: 14px;
+  background: rgba(18, 15, 12, 0.9);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.faq-q {
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  color: #f7f2ea;
+}
+.faq-a {
+  padding: 0 22px 20px;
+  font-size: 13px;
+  color: #b8ada0;
+  line-height: 1.6;
+  display: none;
+}
+.faq-item.open .faq-a { display: block; }
+.faq-arrow { transition: .2s; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); color: #f0d29b; }
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: none;
+  place-items: center;
+  padding: 16px;
+}
+.modal-box {
+  width: min(540px, 100%);
+  background: #14110d;
+  border: 2px solid rgba(240, 210, 155, 0.4);
+  border-radius: 24px;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.9);
+}
+.close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #241d15;
+  border: 1px solid rgba(214,177,122,0.3);
+  color: #d6b17a;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+/* Responsive */
+@media(max-width: 1024px) {
+  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .founder-grid, .course-grid, .calc-container { grid-template-columns: 1fr; }
+  .gold-beam { display: none; }
+  .bottom-bar { flex-direction: column; text-align: center; }
+  .center-info { border: none; padding: 12px 0; text-align: center; }
+}
+@media(max-width: 640px) {
+  .cards-grid, .lifestyle-grid { grid-template-columns: 1fr; }
+  .module-tabs { grid-template-columns: repeat(2, 1fr); }
+  .nav-pill { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="gold-beam"></div>
+
+<!-- Modal Popup for Direct Enrollment -->
+<div class="modal-overlay" id="enrollModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <button class="close-btn" onclick="closeModal()">✕</button>
+    <div style="text-align:center;margin-bottom:20px;">
+      <span class="badge-label">Direct Enrollment</span>
+      <h3 class="font-cinzel" style="font-size:24px;color:#fff;margin-top:6px;">Trader Mix <span class="text-gold">$150 Masterclass</span></h3>
+      <p style="font-size:12px;color:#a89c8f;margin-top:4px;">Direct 1-on-1 Mentorship with <strong>Shaheen</strong> + Lifetime VIP Signals</p>
+    </div>
+    
+    <div style="background:#1c1712;border:1px solid rgba(214,177,122,0.25);border-radius:12px;padding:16px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <div style="font-size:18px;font-weight:800;color:#f0d29b;font-family:monospace;">$150 USD</div>
+        <div style="font-size:11px;color:#8e8273;">One-time Lifetime Access</div>
+      </div>
+      <span style="font-size:11px;font-weight:700;color:#4ade80;background:rgba(22,101,52,0.4);border:1px solid rgba(74,222,128,0.3);padding:3px 10px;border-radius:20px;">Instant VIP Access</span>
+    </div>
+
+    <div style="margin-bottom:20px;font-size:12px;color:#cfc3b4;">
+      <div style="display:flex;gap:8px;margin-bottom:8px;"><span>✓</span> 8-Week Complete Institutional SMC & Price Action</div>
+      <div style="display:flex;gap:8px;margin-bottom:8px;"><span>✓</span> Daily VIP Pre-Market Analysis & High-Probability Setups</div>
+      <div style="display:flex;gap:8px;margin-bottom:8px;"><span>✓</span> Weekly Live Backtesting & Direct Q&A with Shaheen</div>
+      <div style="display:flex;gap:8px;"><span>✓</span> Personal Trade Journal Audits & Prop Firm Blueprint</div>
+    </div>
+
+    <a href="https://t.me/TraderMix00" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;background:#38bdf8;color:#0b141d;border-radius:12px;font-weight:800;font-size:14px;box-shadow:0 8px 25px rgba(56,189,248,0.4);">
+      <span>Contact Shaheen on Telegram (@TraderMix00) ➔</span>
+    </a>
+    <div style="text-align:center;font-size:11px;color:#7e7264;margin-top:12px;">
+      Email inquiries: <strong style="color:#f0d29b;">fahadmix33705@gmail.com</strong>
+    </div>
+  </div>
+</div>
+
+<div class="shell">
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="brand-lockup">
+      <svg class="crown-icon" viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
+      <div class="brand-title"><span class="text-silver">TRADER</span><span class="text-gold">MIX</span></div>
+      <div class="brand-sub">TRADE ✦ LEARN ✦ GROW</div>
+    </div>
+
+    <!-- Center Nav Pill -->
+    <nav class="nav-pill">
+      <a href="#home" class="active"><span>⌂</span> Home</a>
+      <a href="#founder"><span>👤</span> Founder</a>
+      <a href="#course"><span>📚</span> $150 Course</a>
+      <a href="#calculator"><span>🔢</span> Calculator</a>
+      <a href="#faq"><span>❓</span> FAQ</a>
+      <button onclick="openModal()" class="btn-yellow-sm"><span>👥</span> Join Community</button>
+    </nav>
+
+    <!-- Right Controls -->
+    <div class="auth-actions">
+      <a href="https://t.me/TraderMix00" target="_blank" class="btn-enroll-action" style="padding:8px 18px;font-size:12px;">
+        Telegram Channel ➔
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="welcome-txt">Welcome to</div>
+    <div style="display:flex;justify-content:center"><svg class="hero-crown" viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg></div>
+    <div class="hero-brand"><span class="text-silver">TRADER</span><span class="text-gold">MIX</span></div>
+    <div class="hero-sub">TRADE ✦ LEARN ✦ GROW</div>
+    <p class="hero-desc">Join our community and take your trading skills to the next level</p>
+
+    <div>
+      <a href="https://t.me/TraderMix00" target="_blank" class="telegram-pill">
+        <div class="tg-icon">
+          <svg viewBox="0 0 24 24"><path d="M21.7 3.3 18.5 20c-.2 1.2-.9 1.5-1.8 1l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.7 1.1 12.2c-1.1-.3-1.1-1.1.2-1.6L20.4 3.2c.9-.3 1.7.2 1.3 1.1Z"/></svg>
+        </div>
+        <span class="tg-text">Telegram Public Channel</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 3 Sample Cards Grid -->
+  <section class="cards-grid">
+    <!-- Card 1: Forex Trading ($150) -->
+    <div class="sample-card">
+      <div>
+        <div class="card-header">
+          <div class="card-avatar">
+            <img src="IMG_5608.JPG.jpeg" onerror="this.onerror=null;this.src='https://ais-pre-hqqxd7cu3afajwvimcfyka-436748455932.asia-northeast1.run.app/assets/aistudio/IMG_5608.JPG_2b4b2f21.jpeg';" alt="Shaheen Forex Trading">
+          </div>
+          <div class="card-title">
+            <h3><span style="color:#FFC107">Forex</span><br><span style="color:#fff">Trading</span></h3>
+            <span class="pill-badge gold">Premium Course</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <span>🎓</span>
+          <span>Beginner to Advanced Trading Masterclass</span>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <span class="tag-price">$150</span>
+        <button onclick="openModal()" class="btn-enroll-action btn-enroll">
+          Enroll Now ➔
+        </button>
+      </div>
+    </div>
+
+    <!-- Card 2: Premium Live Trade -->
+    <div class="sample-card" style="border-color:rgba(34,197,94,0.5)">
+      <div>
+        <div class="card-header">
+          <div class="card-avatar" style="border-color:#22c55e;box-shadow:0 0 18px rgba(34,197,94,0.6)">
+            <img src="240cb356-2b6b-47c1-9a4c-f27544b31915.png" onerror="this.onerror=null;this.src='https://ais-pre-hqqxd7cu3afajwvimcfyka-436748455932.asia-northeast1.run.app/assets/aistudio/240cb356-2b6b-47c1-9a4c-f27544b31915_d27fd848.png';" alt="TraderMix Binary Live Trade by Shaheen">
+          </div>
+          <div class="card-title">
+            <h3><span style="color:#22c55e">Premium</span><br><span style="color:#fff">Live Trade</span></h3>
+            <span class="pill-badge green">● Everyday</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <span>📈</span>
+          <span>Premium Live Trade Support with Expert Guidance</span>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <span class="tag-free">Free</span>
+        <a href="https://t.me/TraderMix00" target="_blank" class="btn-green">
+          Join Telegram ➔
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 3: Join Our Community -->
+    <div class="sample-card">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <h3 style="font-size:20px;font-weight:800;line-height:1.1">
+              <span style="color:#fff">Join Our</span><br><span style="color:#FFC107">Community</span>
+            </h3>
+            <div style="font-size:11px;color:#CBD5E1;margin-top:4px">Be a Part of Trader Mix Family</div>
+          </div>
+          <div style="width:54px;height:45px">
+            <svg viewBox="0 0 60 50" fill="none">
+              <rect x="5" y="35" width="8" height="15" rx="1.5" fill="#FFC107" />
+              <rect x="18" y="25" width="8" height="25" rx="1.5" fill="#FFC107" />
+              <rect x="31" y="15" width="8" height="35" rx="1.5" fill="#FFC107" />
+              <rect x="44" y="5" width="8" height="45" rx="1.5" fill="#FFC107" />
+              <path d="M4 42 Q 25 25, 48 8" stroke="#FFE082" stroke-width="3" stroke-linecap="round" />
+              <polygon points="54,6 44,4 47,14" fill="#FFE082" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="social-icons-row">
+          <a href="https://t.me/TraderMix00" target="_blank" class="soc-btn tg" title="Telegram">
+            <svg viewBox="0 0 24 24"><path d="M21.7 3.3 18.5 20c-.2 1.2-.9 1.5-1.8 1l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.7 1.1 12.2c-1.1-.3-1.1-1.1.2-1.6L20.4 3.2c.9-.3 1.7.2 1.3 1.1Z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1QEBVduZXq/?mibextid=wwXIfr" target="_blank" class="soc-btn fb" title="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@tradermix01?_r=1&_t=ZS-9AQ060LT6jk" target="_blank" class="soc-btn tt" title="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M19.6 8.2a7.1 7.1 0 0 1-4.2-1.4v7.1a5.8 5.8 0 1 1-5-5.7v3.6a2.3 2.3 0 1 0 1.6 2.2V2.5h3.4c.2 2.1 1.9 3.8 4.2 4v1.7Z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@Tradermixofficial" target="_blank" class="soc-btn yt" title="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card-bottom">
+        <a href="https://t.me/TraderMix00" target="_blank" class="btn-enroll-action btn-enroll" style="width:100%;justify-content:center">
+          Follow Us ➔
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Bar matching sample footer strip -->
+  <footer class="bottom-bar">
+    <div class="brand-lockup">
+      <svg class="crown-icon" viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
+      <div class="brand-title"><span class="text-silver">TRADER</span><span class="text-gold">MIX</span></div>
+      <div class="brand-sub">TRADE ✦ LEARN ✦ GROW</div>
+    </div>
+
+    <div class="center-info">
+      <p>We focus on helping every student grow in <strong style="color:#FFC72C">forex</strong> through step-by-step guidance, real market insights, and hands-on learning. Using modern strategies and smart risk management for <strong style="color:#FFC72C">long-term success</strong>.</p>
+      <div class="warn-txt">⚠️ Trading involves financial risk. Always use proper risk management. ⚠️</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+      <div style="display:flex;gap:6px">
+        <a href="https://www.youtube.com/@Tradermixofficial" target="_blank" class="soc-btn yt" style="width:28px;height:28px"><svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a>
+        <a href="https://www.tiktok.com/@tradermix01?_r=1&_t=ZS-9AQ060LT6jk" target="_blank" class="soc-btn tt" style="width:28px;height:28px"><svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M19.6 8.2a7.1 7.1 0 0 1-4.2-1.4v7.1a5.8 5.8 0 1 1-5-5.7v3.6a2.3 2.3 0 1 0 1.6 2.2V2.5h3.4c.2 2.1 1.9 3.8 4.2 4v1.7Z"/></svg></a>
+        <a href="https://www.facebook.com/share/1QEBVduZXq/?mibextid=wwXIfr" target="_blank" class="soc-btn fb" style="width:28px;height:28px"><svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z"/></svg></a>
+      </div>
+      <div class="script-motto">Learn • Grow • Succeed</div>
+    </div>
+  </footer>
+
+  <!-- SECTION 2: FOUNDER & HEAD TRADER SPOTLIGHT -->
+  <section class="section-wrapper" id="founder">
+    <div class="founder-grid">
+      <div class="founder-portrait">
+        <img src="IMG_5608.JPG.jpeg" onerror="this.onerror=null;this.src='https://ais-pre-hqqxd7cu3afajwvimcfyka-436748455932.asia-northeast1.run.app/assets/aistudio/IMG_5608.JPG_2b4b2f21.jpeg';" alt="Shaheen - Founder & Head Trader of Trader Mix">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0deg,rgba(0,0,0,0.95) 0%,transparent 100%);padding:24px;">
+          <div class="font-cinzel" style="font-size:22px;font-weight:800;color:#f5e4c3;">Shaheen</div>
+          <div style="font-size:12px;color:#d6b17a;letter-spacing:.15em;text-transform:uppercase;">Founder & Head Trader • Trader Mix</div>
+        </div>
+      </div>
+
+      <div>
+        <span class="badge-label">Leadership & Philosophy</span>
+        <h2 class="font-cinzel section-title">Institutional Precision.<br><span class="text-gold">Uncompromising Mindset.</span></h2>
+        <p class="section-subtitle" style="margin-bottom:24px;">
+          "Trading is not about guessing candlestick colors. It is about understanding where central banks, institutions, and algorithmic market makers inject liquidity. Once you learn to wait patiently for your A+ setup, the market becomes your greatest asset."
+        </p>
+
+        <div style="display:grid;gap:14px;margin-bottom:28px;">
+          <div style="padding:16px;border-radius:12px;background:#14120e;border:1px solid rgba(214,177,122,0.2);">
+            <div style="font-size:14px;font-weight:700;color:#f5e4c3;margin-bottom:4px;">⚡ Institutional Liquidity (SMC)</div>
+            <div style="font-size:12px;color:#9d9284;">Trade in the direction of bank orders, fair value gaps (FVG), and liquidity sweeps rather than retail indicator clutter.</div>
+          </div>
+          <div style="padding:16px;border-radius:12px;background:#14120e;border:1px solid rgba(214,177,122,0.2);">
+            <div style="font-size:14px;font-weight:700;color:#f5e4c3;margin-bottom:4px;">🎯 Direct Mentorship ($150 Masterclass)</div>
+            <div style="font-size:12px;color:#9d9284;">In our $150 mentorship, students get direct Q&A access, live chart reviews, and personal trade feedback from Shaheen.</div>
+          </div>
+          <div style="padding:16px;border-radius:12px;background:#14120e;border:1px solid rgba(214,177,122,0.2);">
+            <div style="font-size:14px;font-weight:700;color:#f5e4c3;margin-bottom:4px;">🛡️ Unfiltered Accountability</div>
+            <div style="font-size:12px;color:#9d9284;">Every trade idea, win or loss, is journaled and reviewed to build resilient psychological execution.</div>
+          </div>
+        </div>
+
+        <button onclick="openModal()" class="btn-enroll-action" style="padding:12px 28px;font-size:13px;">
+          Enroll in Masterclass for $150 ➔
+        </button>
+      </div>
+    </div>
+
+    <!-- Lifestyle Editorial Grid -->
+    <div style="margin-top:50px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:24px;">
+        <div>
+          <span class="badge-label">Behind The Charts</span>
+          <h3 class="font-cinzel" style="font-size:26px;font-weight:700;color:#eee7dc;">Discipline as a Way of Life</h3>
+        </div>
+        <p style="font-size:12px;color:#9f9486;max-width:400px;">A profitable trader is forged in routine, physical fitness, mental composure, and unrelenting patience.</p>
+      </div>
+
+      <div class="lifestyle-grid">
+        <div class="glass-panel lifestyle-card">
+          <div class="lifestyle-img">
+            <img src="IMG_9582.JPG.jpeg" onerror="this.onerror=null;this.src='https://ais-pre-hqqxd7cu3afajwvimcfyka-436748455932.asia-northeast1.run.app/assets/aistudio/IMG_9582.JPG_518627bc.jpeg';" alt="Shaheen Trading Discipline Lifestyle">
+          </div>
+          <div style="font-size:14px;font-weight:700;color:#f7f2eb;margin-bottom:6px;">Pre-Market Preparation & Lifestyle</div>
+          <div style="font-size:12px;color:#9d9284;line-height:1.5;">Every day starts with physical wellness, reviewing macro economic news releases, and waiting for the market to deliver our precise A+ setup without chasing candles.</div>
+        </div>
+
+        <div class="glass-panel lifestyle-card">
+          <div class="lifestyle-img" style="background:#14120f;">
+            <img src="IMG_9147.JPG" onerror="this.onerror=null;this.src='https://ais-pre-hqqxd7cu3afajwvimcfyka-436748455932.asia-northeast1.run.app/assets/aistudio/IMG_9147_c6884b1e.JPG';" style="object-position:center 12%;" alt="Shaheen Mentorship & Focus with Phone">
+          </div>
+          <div style="font-size:14px;font-weight:700;color:#f7f2eb;margin-bottom:6px;">1-on-1 Student Guidance & Commitment</div>
+          <div style="font-size:12px;color:#9d9284;line-height:1.5;">Inside the $150 mentorship, Shaheen inspects student trade journals, corrects bad psychological habits, and supports members through prop firm challenge evaluations.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: $150 COMPLETE MASTERCLASS & CURRICULUM -->
+  <section class="section-wrapper" id="course">
+    <div class="section-header">
+      <span class="badge-label">Masterclass & Mentorship • $150</span>
+      <h2 class="font-cinzel section-title">The Complete Trading <span class="text-gold">Mastery Program</span></h2>
+      <p class="section-subtitle">Everything you need to trade institutional price action, pass prop firm evaluations, and gain psychological consistency for a one-time enrollment of <strong style="color:#f0d29b;">$150</strong>.</p>
+    </div>
+
+    <div class="course-grid">
+      <!-- Pricing Card -->
+      <div class="glass-panel pricing-card">
+        <div style="position:absolute;top:0;right:0;background:linear-gradient(to left, #f0d29b, #ca9b58);color:#14100b;font-size:11px;font-weight:900;text-transform:uppercase;padding:6px 14px;border-bottom-left-radius:12px;">
+          70% OFF LIMITED
+        </div>
+
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#d6b17a;text-transform:uppercase;margin-bottom:6px;">Lifetime VIP Membership</div>
+          <h3 class="font-cinzel" style="font-size:26px;font-weight:700;color:#eee7dc;margin-bottom:16px;">Elite Mentorship</h3>
+          
+          <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px;">
+            <span class="font-cinzel" style="font-size:52px;font-weight:900;color:#f0d29b;">$150</span>
+            <span style="font-size:18px;color:#7c7164;text-decoration:line-through;">$499</span>
+            <span style="font-size:11px;font-weight:700;color:#4ade80;background:rgba(22,101,52,0.5);border:1px solid rgba(74,222,128,0.3);padding:2px 8px;border-radius:4px;">SAVE $349</span>
+          </div>
+
+          <div style="font-size:12px;color:#a39789;margin-bottom:24px;">✓ One-time payment • No monthly subscription fees</div>
+
+          <div style="border-top:1px solid rgba(214,177,122,0.15);padding-top:18px;margin-bottom:24px;">
+            <div class="check-item"><span class="check-icon">✓</span><span>Complete Institutional Price Action & Market Structure</span></div>
+            <div class="check-item"><span class="check-icon">✓</span><span>Smart Money Concepts (SMC) & Liquidity Grab Identification</span></div>
+            <div class="check-item"><span class="check-icon">✓</span><span>High-Probability Order Block & Fair Value Gap (FVG) Strategy</span></div>
+            <div class="check-item"><span class="check-icon">✓</span><span>Strict Risk-to-Reward Ratio System (Minimum 1:3 RR)</span></div>
+            <div class="check-item"><span class="check-icon">✓</span><span>Daily Pre-Market Chart Breakdowns on Telegram VIP</span></div>
+            <div class="check-item"><span class="check-icon">✓</span><span>Weekly Live Zoom/Telegram Q&A & Backtesting with Shaheen</span></div>
+            <div class="check-item"><span class="check-icon">✓</span><span>Prop Firm Challenge Passing Blueprint (FTMO, FundedNext)</span></div>
+          </div>
+        </div>
+
+        <div>
+          <button onclick="openModal()" class="btn-enroll-action" style="width:100%;padding:16px;font-size:15px;justify-content:center;">
+            Enroll in Course for $150 ➔
+          </button>
+          <div style="text-align:center;font-size:11px;color:#8e8273;margin-top:10px;">
+            Direct mentorship by Shaheen • Instant Telegram VIP invite
+          </div>
+        </div>
+      </div>
+
+      <!-- Curriculum Details Card -->
+      <div class="glass-panel curriculum-card">
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(214,177,122,0.15);">
+            <div>
+              <span style="font-size:11px;color:#d6b17a;text-transform:uppercase;letter-spacing:.2em;font-weight:700;">Structured 8-Week Blueprint</span>
+              <h4 class="font-cinzel" style="font-size:22px;color:#eee7dc;margin-top:4px;">Masterclass Curriculum</h4>
+            </div>
+            <span style="font-size:12px;color:#f0d29b;background:rgba(214,177,122,0.15);padding:4px 12px;border-radius:8px;">Beginner to Pro</span>
+          </div>
+
+          <div class="module-tabs">
+            <button class="mod-tab active" onclick="switchMod(0)">
+              <div style="font-size:10px;text-transform:uppercase;">Module 01</div>
+              <div style="font-size:12px;font-weight:700;margin-top:2px;">Week 1</div>
+            </button>
+            <button class="mod-tab" onclick="switchMod(1)">
+              <div style="font-size:10px;text-transform:uppercase;">Module 02</div>
+              <div style="font-size:12px;font-weight:700;margin-top:2px;">Week 2</div>
+            </button>
+            <button class="mod-tab" onclick="switchMod(2)">
+              <div style="font-size:10px;text-transform:uppercase;">Module 03</div>
+              <div style="font-size:12px;font-weight:700;margin-top:2px;">Week 3</div>
+            </button>
+            <button class="mod-tab" onclick="switchMod(3)">
+              <div style="font-size:10px;text-transform:uppercase;">Module 04</div>
+              <div style="font-size:12px;font-weight:700;margin-top:2px;">Week 4-8</div>
+            </button>
+          </div>
+
+          <!-- Mod Details Container -->
+          <div id="modContent" style="padding:20px;border-radius:14px;background:#13110d;border:1px solid rgba(214,177,122,0.25);margin-bottom:20px;">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- The Math Behind $150 Value -->
+          <div style="padding:16px;border-radius:14px;background:rgba(27,23,18,0.9);border:1px solid rgba(240,210,155,0.25);display:flex;gap:14px;">
+            <div style="width:38px;height:38px;border-radius:8px;background:rgba(214,177,122,0.2);display:grid;place-items:center;color:#f0d29b;flex-shrink:0;">⚡</div>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:#f5e4c3;margin-bottom:4px;">Why the $150 investment pays for itself</div>
+              <div style="font-size:12px;color:#a19688;line-height:1.5;">On a $10,000 funded account, risking just 1% ($100) on a single 1:3 RR setup yields <strong>$300 profit</strong>. One single disciplined trade covers your entire $150 mentorship fee twice over.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid rgba(214,177,122,0.15);font-size:12px;color:#8e8273;margin-top:18px;">
+          <span>🛡️ Verified Content • Zero Indicator Clutter</span>
+          <button onclick="openModal()" style="color:#f0d29b;background:none;border:none;cursor:pointer;font-weight:700;">Enroll Now ➔</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: INTERACTIVE TRADING CALCULATOR -->
+  <section class="section-wrapper" id="calculator">
+    <div class="section-header">
+      <span class="badge-label">Interactive Risk Engine</span>
+      <h2 class="font-cinzel section-title">Institutional <span class="text-gold">Position Size Calculator</span></h2>
+      <p class="section-subtitle">See the exact mathematics of how a strict 1:3 Risk-to-Reward framework turns consistency into wealth, and how a single disciplined trade covers your <strong style="color:#f0d29b;">$150 course</strong>.</p>
+    </div>
+
+    <div class="glass-panel calc-container">
+      <div>
+        <div class="input-row">
+          <div class="input-label"><span>Account Balance ($)</span><span id="accDisplay" style="color:#f0d29b;font-family:monospace;">$10,000</span></div>
+          <div class="btn-size-group">
+            <button class="btn-size" onclick="setSize(1000)">$1k</button>
+            <button class="btn-size" onclick="setSize(5000)">$5k</button>
+            <button class="btn-size active" onclick="setSize(10000)">$10k</button>
+            <button class="btn-size" onclick="setSize(50000)">$50k</button>
+          </div>
+          <input type="range" min="500" max="100000" step="500" value="10000" id="accRange" class="calc-slider" oninput="updateCalc()">
+        </div>
+
+        <div class="input-row">
+          <div class="input-label"><span>Risk Per Trade (%)</span><span id="riskDisplay" style="color:#f0d29b;font-family:monospace;">1.0% ($100)</span></div>
+          <input type="range" min="0.25" max="3.0" step="0.25" value="1.0" id="riskRange" class="calc-slider" oninput="updateCalc()">
+        </div>
+
+        <div class="input-row">
+          <div class="input-label"><span>Stop Loss Distance (Pips)</span><span id="slDisplay" style="color:#f0d29b;font-family:monospace;">25 Pips</span></div>
+          <input type="range" min="5" max="100" step="5" value="25" id="slRange" class="calc-slider" oninput="updateCalc()">
+        </div>
+      </div>
+
+      <!-- Result Card -->
+      <div class="result-card">
+        <div style="font-size:11px;text-transform:uppercase;color:#d6b17a;letter-spacing:.2em;margin-bottom:12px;font-weight:700;">Calculated Institutional Execution</div>
+        
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;">
+          <div>
+            <div style="font-size:11px;color:#8e8273;">Recommended Lot Size</div>
+            <div id="lotDisplay" style="font-size:28px;font-weight:900;color:#f7f2ea;font-family:monospace;">0.40 Lots</div>
+          </div>
+          <div>
+            <div style="font-size:11px;color:#8e8273;">Risk Amount ($)</div>
+            <div id="riskAmtDisplay" style="font-size:28px;font-weight:900;color:#f87171;font-family:monospace;">$100.00</div>
+          </div>
+        </div>
+
+        <div style="padding:14px;background:#1e1a14;border-radius:12px;border:1px solid rgba(214,177,122,0.2);margin-bottom:18px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+            <span style="font-size:12px;color:#d4c8b8;">Target Profit (1:3 RR)</span>
+            <span id="profitDisplay" style="font-size:18px;font-weight:900;color:#4ade80;font-family:monospace;">+$300.00</span>
+          </div>
+          <div style="font-size:11px;color:#9d9284;">Covers your entire $150 course <strong id="coverDisplay" style="color:#f0d29b;">2.0x</strong> in a single trade!</div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;font-size:11px;color:#4ade80;">
+          <span>✓ Prop Firm Safety Check: 100% compliant with FTMO & FundedNext rules.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: FREQUENTLY ASKED QUESTIONS -->
+  <section class="section-wrapper" id="faq">
+    <div class="section-header">
+      <span class="badge-label">Trader Mix Knowledge Base</span>
+      <h2 class="font-cinzel section-title">Frequently Asked <span class="text-gold">Questions</span></h2>
+      <p class="section-subtitle">Everything you need to know about our trading education, $150 mentorship enrollment, and free community resources.</p>
+    </div>
+
+    <div class="faq-wrap">
+      <div class="faq-item open" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>What is included in the $150 Trader Mix Course?</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          The $150 course provides full lifetime access to the 8-week structured masterclass (covering basic to advanced Smart Money Concepts, Price Action, Liquidity Grabs, and Risk Management), access to our private VIP Telegram signal channel, weekly live chart breakdown sessions, and direct mentorship Q&A with Shaheen.
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>I am a complete beginner. Is this suitable for me?</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          Yes, the course starts from ground zero (market structure, broker selection, Risk/Reward calculation, lot sizing) and progresses step-by-step into institutional entry models. Beginners will build healthy trading habits without losing capital on bad retail indicators.
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>How do I enroll and make the $150 payment?</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          You can click any 'Enroll in $150 Course' button on this page to contact Shaheen directly via Telegram (@TraderMix00) or email (fahadmix33705@gmail.com). We accept Crypto (USDT TRC20/BEP20), Binance Pay, and local bank transfers with instant verification and immediate VIP invite.
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">
+          <span>Are the Telegram, YouTube, Facebook, and TikTok channels free to join?</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          Yes! Our public Telegram channel, YouTube tutorials, Facebook page, and TikTok videos are 100% free for everyone. The $150 fee is exclusively for the comprehensive Academy Masterclass & private VIP mentorship circle.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: COMPREHENSIVE FOOTER -->
+  <footer style="background:#080706;border-top:1px solid rgba(214,177,122,0.2);padding:60px 0 40px;position:relative;z-index:20;">
+    <div style="display:grid;grid-template-columns:5fr 3fr 4fr;gap:40px;margin-bottom:40px;">
+      <div>
+        <div class="brand-lockup" style="margin-bottom:14px;">
+          <svg class="crown-icon" viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
+          <div class="brand-title"><span class="text-silver">TRADER</span><span class="text-gold">MIX</span></div>
+          <div class="brand-sub">TRADE ✦ LEARN ✦ GROW</div>
+        </div>
+        <p style="font-size:12px;color:#8e8273;max-width:360px;line-height:1.6;">
+          An elite community founded by <strong style="color:#f7f2ea;">Shaheen</strong>, providing high-probability market insights, the $150 masterclass, and institutional price action education.
+        </p>
+      </div>
+
+      <div>
+        <div style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;margin-bottom:12px;">Navigation</div>
+        <div style="display:grid;gap:8px;font-size:12px;color:#9d9284;">
+          <a href="#home">Home & Signals</a>
+          <a href="#founder">Founder Shaheen's Story</a>
+          <a href="#course">Complete Course ($150)</a>
+          <a href="#calculator">Position Size Calculator</a>
+          <a href="#faq">Frequently Asked Questions</a>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;margin-bottom:12px;">Official Channels</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px;">
+          <a href="https://t.me/TraderMix00" target="_blank" style="padding:8px;background:#12100d;border:1px solid rgba(214,177,122,0.15);border-radius:6px;display:flex;justify-content:space-between;"><span>Telegram</span> <span>↗</span></a>
+          <a href="https://www.facebook.com/share/1QEBVduZXq/?mibextid=wwXIfr" target="_blank" style="padding:8px;background:#12100d;border:1px solid rgba(214,177,122,0.15);border-radius:6px;display:flex;justify-content:space-between;"><span>Facebook</span> <span>↗</span></a>
+          <a href="https://www.tiktok.com/@tradermix01?_r=1&_t=ZS-9AQ060LT6jk" target="_blank" style="padding:8px;background:#12100d;border:1px solid rgba(214,177,122,0.15);border-radius:6px;display:flex;justify-content:space-between;"><span>TikTok</span> <span>↗</span></a>
+          <a href="https://www.youtube.com/@Tradermixofficial" target="_blank" style="padding:8px;background:#12100d;border:1px solid rgba(214,177,122,0.15);border-radius:6px;display:flex;justify-content:space-between;"><span>YouTube</span> <span>↗</span></a>
+        </div>
+        <div style="font-size:11px;color:#7d7162;margin-top:12px;">
+          Email: <a href="mailto:fahadmix33705@gmail.com" style="color:#f0d29b;">fahadmix33705@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid rgba(214,177,122,0.15);padding-top:24px;font-size:11px;color:#6b6256;line-height:1.6;">
+      <div style="font-weight:700;color:#f59e0b;margin-bottom:4px;">⚠️ Official Financial Risk Disclaimer</div>
+      <p>Trading foreign exchange (Forex), cryptocurrencies, commodities, and derivatives on margin carries a high level of risk and may not be suitable for all individuals. Before deciding to trade, you should carefully consider your investment objectives, level of experience, and risk appetite. The high degree of leverage can work against you as well as for you. Trader Mix and Shaheen provide educational content and market structure commentary. Nothing on this website constitutes financial or investment advice. Always use strict stop-loss rules and proper risk management.</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+// Curriculum data
+const modules = [
+  {
+    title: 'Market Anatomy & Advanced Candlestick Behaviour',
+    duration: 'Week 1',
+    highlights: [
+      'Understanding True Volume & Institutional Footprints',
+      'Candlestick wick rejections vs true break of structure (BOS)',
+      'Multi-timeframe synchronization (Monthly down to 1-Min)'
+    ]
+  },
+  {
+    title: 'Smart Money Concepts & Liquidity Engineering',
+    duration: 'Week 2',
+    highlights: [
+      'Buy-side vs Sell-side Liquidity pools detection',
+      'Institutional Inducement vs genuine trend continuation',
+      'Fair Value Gaps (FVG) and mitigation fill strategies'
+    ]
+  },
+  {
+    title: 'Supply, Demand & Precise Entry Models',
+    duration: 'Week 3',
+    highlights: [
+      'Refined Order Block selection (Refining to 5m/1m for sniper entries)',
+      'Breaker blocks, change of character (CHoCH) confirmation',
+      'Session timings: London & New York Killzones'
+    ]
+  },
+  {
+    title: 'Risk Management, Psychology & Prop Firm Mastery',
+    duration: 'Week 4-8',
+    highlights: [
+      'Never risking more than 0.5%–1% per trade',
+      'Emotional detachment: Overcoming FOMO and revenge trading',
+      'Scale-in techniques & compounding capital to financial freedom'
+    ]
+  }
+];
+
+function switchMod(idx) {
+  const tabs = document.querySelectorAll('.mod-tab');
+  tabs.forEach((t, i) => t.classList.toggle('active', i === idx));
+  const mod = modules[idx];
+  document.getElementById('modContent').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+      <div style="font-weight:700;font-size:16px;color:#f7f2ea;">${mod.title}</div>
+      <span style="font-size:11px;color:#f0d29b;background:rgba(214,177,122,0.2);padding:2px 8px;border-radius:4px;">${mod.duration}</span>
+    </div>
+    <div style="display:grid;gap:8px;font-size:13px;color:#c8bcad;">
+      ${mod.highlights.map(h => `<div style="display:flex;gap:8px;"><span style="color:#d6b17a;">🎯</span><span>${h}</span></div>`).join('')}
+    </div>
+  `;
+}
+switchMod(0);
+
+// Interactive Calculator
+function setSize(val) {
+  document.getElementById('accRange').value = val;
+  const btns = document.querySelectorAll('.btn-size');
+  btns.forEach(b => b.classList.toggle('active', b.innerText.includes(val >= 1000 ? val/1000 + 'k' : val)));
+  updateCalc();
+}
+
+function updateCalc() {
+  const balance = parseFloat(document.getElementById('accRange').value);
+  const riskPct = parseFloat(document.getElementById('riskRange').value);
+  const slPips = parseFloat(document.getElementById('slRange').value);
+
+  const riskAmt = (balance * riskPct) / 100;
+  const lots = Math.max(0.01, (riskAmt / (slPips * 10))).toFixed(2);
+  const profit = (riskAmt * 3).toFixed(2);
+  const coverRatio = (profit / 150).toFixed(1);
+
+  document.getElementById('accDisplay').innerText = '$' + balance.toLocaleString();
+  document.getElementById('riskDisplay').innerText = riskPct.toFixed(2) + '% ($' + riskAmt.toFixed(0) + ')';
+  document.getElementById('slDisplay').innerText = slPips + ' Pips';
+  document.getElementById('lotDisplay').innerText = lots + ' Lots';
+  document.getElementById('riskAmtDisplay').innerText = '$' + riskAmt.toFixed(2);
+  document.getElementById('profitDisplay').innerText = '+$' + profit;
+  document.getElementById('coverDisplay').innerText = coverRatio + 'x';
+}
+updateCalc();
+
+// FAQ toggle
+function toggleFaq(el) {
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('open'));
+  if (!isOpen) el.classList.add('open');
+}
+
+// Modal controls
+function openModal() {
+  document.getElementById('enrollModal').style.display = 'grid';
+}
+function closeModal() {
+  document.getElementById('enrollModal').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
